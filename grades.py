@@ -38,6 +38,14 @@ def print_result(scores, average):
     print("-" * 30)
     print(f"  {'평균':<10} {average:>6.1f}점")
     print("=" * 30)
+
+
+def find_highest_lowest(scores):
+    """최고점과 최저점 과목을 반환한다."""
+    highest = max(SUBJECTS, key=lambda s: scores[s])
+    lowest  = min(SUBJECTS, key=lambda s: scores[s])
+    return highest, lowest
+
 if __name__ == "__main__":
     scores = get_scores()
     print("\n입력된 점수:", scores)
